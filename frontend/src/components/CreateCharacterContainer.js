@@ -5,8 +5,17 @@ import CreateCharacterForm from '../forms/CreateCharacterForm';
 const CreateCharacterContainer = () => {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const handleClose = () => {
+    setShow(false);
+  }
+
+  const handleCloseRandom = () => {
+    //TODO random stuff here
+    setShow(false);
+  }
+
 
   return (
     <div>
@@ -21,6 +30,9 @@ const CreateCharacterContainer = () => {
         <Modal.Footer>
           <Button variant = "primary" onClick = {handleClose}>
             Save Changes
+          </Button>
+          <Button variant = "primary" onClick = {handleCloseRandom}>
+            Random Gen
           </Button>
           <Button variant= "secondary" onClick = {handleClose}>
             Close

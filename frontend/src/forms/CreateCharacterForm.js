@@ -1,10 +1,12 @@
 import React from 'react';
 import {Form, InputGroup} from 'react-bootstrap';
+import * as Alignments from '../constants/alignment';
 
 const MIN_STAT = 1;
 const MAX_STAT = 20;
 
-const CreateCharacterForm = ()=> {
+const CreateCharacterForm = (props)=> {
+
   return (
     <div>
       <Form>
@@ -34,7 +36,7 @@ const CreateCharacterForm = ()=> {
 
         <br/>
 
-        <Form.Group className = "characterCreate" controlId = "characterStat">
+        <Form.Group className = "characterCreate" controlId = "characterStat2">
           <InputGroup className = "characterCreateStats" >
             <Form.Label>INT </Form.Label>
             <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>  
@@ -44,7 +46,26 @@ const CreateCharacterForm = ()=> {
             <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>
             </InputGroup>    
         </Form.Group>
-   
+
+        <Form.Group className = "characterCreate" controlId = "characterAlignment">
+          <Form.Label> Character Alignment : </Form.Label>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'lg' label = {Alignments.LawfulGood}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ng' label = {Alignments.NeutralGood}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'cg' label = {Alignments.ChaoticGood}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ln' label = {Alignments.LawfulNeutral}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'n'  label = {Alignments.Neutral}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'cn' label = {Alignments.ChaoticNeutral}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'le' label = {Alignments.LawfulEvil}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ne' label = {Alignments.NeutralEvil}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ce' label = {Alignments.ChaoticEvil}/>
+        </Form.Group>
+
+
+        <Form.Group className = "characterCreate" controlId = "characterFaction">
+          <Form.Label> Character Faction :</Form.Label>
+          <Form.Control type="text" placeholder= "Enter Faction here" />
+         </Form.Group>
+
       </Form>
     </div>
   )
