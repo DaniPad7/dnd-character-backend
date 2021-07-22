@@ -15,6 +15,4 @@ public class Alignment {
 	@OneToOne(targetEntity = Profile.class)
 	@JoinColumn(name="profile_id")
 	private Profile profile;
-
-
 }

@@ -12,7 +12,8 @@ const CreateCharacterContainer = () => {
   }
 
   const handleCloseRandom = () => {
-    //TODO random stuff here
+
+
     setShow(false);
   }
 
