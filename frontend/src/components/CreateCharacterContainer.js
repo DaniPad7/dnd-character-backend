@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import CreateCharacterForm from '../forms/CreateCharacterForm';
 
 const CreateCharacterContainer = () => {
   const [show, setShow] = useState(false);
@@ -15,7 +16,7 @@ const CreateCharacterContainer = () => {
           <Modal.Title> Create Your Character here</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          
+          <CreateCharacterForm/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant = "primary" onClick = {handleClose}>

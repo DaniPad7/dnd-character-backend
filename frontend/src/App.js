@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import CreateCharacterform from './components/CreateCharacterForm';
+import CreateCharacterContainer from './components/CreateCharacterContainer';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
           <p>Character Cards goes here</p>
         </Row>
         <Row>
-          <CreateCharacterform/>
+          <CreateCharacterContainer/>
         </Row>
       </Container>
     </div>
