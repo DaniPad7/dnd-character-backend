@@ -1,6 +1,8 @@
 import React from 'react';
-import {Form} from 'react-bootstrap';
+import {Form, InputGroup} from 'react-bootstrap';
 
+const MIN_STAT = 1;
+const MAX_STAT = 20;
 
 const CreateCharacterForm = ()=> {
   return (
@@ -14,35 +16,35 @@ const CreateCharacterForm = ()=> {
 
         <Form.Group className = "characterCreate" controlId = "characterDescription">
           <Form.Label>Character Description</Form.Label>
-          <Form.Control type="text" placeholder = "Enter Description here" />
+          <Form.Control as = "textarea" placeholder = "Enter Description here" />
         </Form.Group>
 
-        <Form.Group className = "characterCreate" controlId = "characterStr">
-          <Form.Label>Character Strength</Form.Label>
-          <Form.Control type="number" min = {0} max = {20}/>          
+        <br/>
+
+        <Form.Group className = "characterCreate" controlId = "characterStat">
+          <InputGroup className = "characterCreateStats" >
+            <Form.Label>STR </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/> 
+            <Form.Label>DEX </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>  
+            <Form.Label>CON </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>  
+          </InputGroup>    
         </Form.Group>
 
-        <Form.Group className = "characterCreate" controlId = "characterDex">
-          <Form.Label>Character Dexerity</Form.Label>
-          <Form.Control type="number" min = {0} max = {20}/>          
+        <br/>
+
+        <Form.Group className = "characterCreate" controlId = "characterStat">
+          <InputGroup className = "characterCreateStats" >
+            <Form.Label>INT </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>  
+            <Form.Label>WIS </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>  
+            <Form.Label>CHA </Form.Label>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT}/>
+            </InputGroup>    
         </Form.Group>
-
-        <Form.Group className = "characterCreate" controlId = "characterCon">
-          <Form.Label>Character Constitution</Form.Label>
-          <Form.Control type="number" min = {0} max = {20}/>          
-        </Form.Group>
-
-        <Form.Group className = "characterCreate" controlId = "characterInt">
-          <Form.Label>Character Intelligence</Form.Label>
-          <Form.Control type="number" min = {0} max = {20}/>          
-        </Form.Group>
-
-
-        <Form.Group className = "characterCreate" controlId = "characterWis">
-          <Form.Label>Character Wisdom</Form.Label>
-          <Form.Control type="number" min = {0} max = {20}/>          
-        </Form.Group>
-
+   
       </Form>
     </div>
   )

@@ -11,7 +11,7 @@ const CreateCharacterContainer = () => {
   return (
     <div>
 
-      <Modal show = {show} onHide={handleClose} animation= {false}>
+      <Modal size = "lg" show = {show} onHide={handleClose} animation= {false}>
         <Modal.Header closeButton>
           <Modal.Title> Create Your Character here</Modal.Title>
         </Modal.Header>
