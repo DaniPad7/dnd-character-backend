@@ -9,28 +9,27 @@ public class Profile {
 
 	@Id
 	@Column
-	int profileId;
+	private int profileId;
 
-	String name;
+	private String name;
 
-	String desc;
+	private String desc;
 
-	int statStrength;
+	private int statStrength;
 
-	int statDexterity;
+	private int statDexterity;
 
-	int statConstitution;
+	private int statConstitution;
 
-	int statIntelligence;
+	private int statIntelligence;
 
-	int statWisdom;
+	private int statWisdom;
 
-	int statCharisma;
+	private int statCharisma;
 
-	@OneToMany(mappedBy = "profile", cascade = CascadeType.ALL)
-	Set<Attribute> attributes;
+	private String faction;
 
-	@OneToMany(mappedBy = "profile", cascade = CascadeType.ALL)
-	Set<Goal> goals;
+	@OneToOne(targetEntity = Alignment.class)
+	private Alignment alignment;
 
 }
