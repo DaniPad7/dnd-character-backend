@@ -1,7 +1,18 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import CreateCharacterContainer from './components/CreateCharacterContainer';
+
 function App() {
   return (
     <div className="App">
-      <p>Hello World!</p>
+      <Container fluid>
+        <Row >
+          <p>Character Cards goes here</p>
+        </Row>
+        <Row>
+          <CreateCharacterContainer/>
+        </Row>
+      </Container>
     </div>
   );
 }
