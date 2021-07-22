@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Form, InputGroup} from 'react-bootstrap';
-import * as Alignments from '../constants/alignment';
+import {Alignments} from '../constants/alignment';
 
 const MIN_STAT = 1;
 const MAX_STAT = 20;
@@ -26,11 +26,11 @@ const CreateCharacterForm = (props)=> {
         <Form.Group className = "characterCreate" controlId = "characterStat">
           <InputGroup className = "characterCreateStats" >
             <Form.Label>STR </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setStr(e.target.value)} }/> 
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setStr( Number( e.target.value  ))} }/> 
             <Form.Label>DEX </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setDex(e.target.value)} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setDex( Number( e.target.value  ))} }/>  
             <Form.Label>CON </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setCon(e.target.value)} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setCon( Number( e.target.value  ))} }/>  
           </InputGroup>    
         </Form.Group>
 
@@ -39,25 +39,25 @@ const CreateCharacterForm = (props)=> {
         <Form.Group className = "characterCreate" controlId = "characterStat2">
           <InputGroup className = "characterCreateStats" >
             <Form.Label>INT </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setInt(e.target.value)} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setInt( Number( e.target.value  ) )} }/>  
             <Form.Label>WIS </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setWis(e.target.value)} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setWis( Number( e.target.value  ))} }/>  
             <Form.Label>CHA </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setCha(e.target.value)} }/>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} onChange = { (e) => {props.setCha( Number( e.target.value  ))} }/>
             </InputGroup>    
         </Form.Group>
 
         <Form.Group className = "characterCreate" controlId = "characterAlignment" >
           <Form.Label> Character Alignment : </Form.Label>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'lg' label = {Alignments.LawfulGood} onChange = { () => {props.setAlignment(Alignments.LawfulGood)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'ng' label = {Alignments.NeutralGood} onChange = { () => {props.setAlignment(Alignments.NeutralGood)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'cg' label = {Alignments.ChaoticGood} onChange = { () => {props.setAlignment(Alignments.ChaoticGood)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'ln' label = {Alignments.LawfulNeutral} onChange = { () => {props.setAlignment(Alignments.LawfulNeutral)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'n'  label = {Alignments.Neutral} onChange = { () => {props.setAlignment(Alignments.Neutral)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'cn' label = {Alignments.ChaoticNeutral} onChange = { () => {props.setAlignment(Alignments.ChaoticNeutral)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'le' label = {Alignments.LawfulEvil} onChange = { () => {props.setAlignment(Alignments.LawfulEvil)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'ne' label = {Alignments.NeutralEvil} onChange = { () => {props.setAlignment(Alignments.NeutralEvil)}}/>
-          <Form.Check inline type = "radio"  name="Alignment" id= 'ce' label = {Alignments.ChaoticEvil} onChange = { () => {props.setAlignment(Alignments.ChaoticEvil)}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'lg' label = {Alignments[0]} onChange = { () => {props.setAlignment(Alignments[0])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ng' label = {Alignments[1]} onChange = { () => {props.setAlignment(Alignments[1])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'cg' label = {Alignments[2]} onChange = { () => {props.setAlignment(Alignments[2])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ln' label = {Alignments[3]} onChange = { () => {props.setAlignment(Alignments[3])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'n'  label = {Alignments[4]} onChange = { () => {props.setAlignment(Alignments[4])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'cn' label = {Alignments[5]} onChange = { () => {props.setAlignment(Alignments[5])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'le' label = {Alignments[6]} onChange = { () => {props.setAlignment(Alignments[6])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ne' label = {Alignments[7]} onChange = { () => {props.setAlignment(Alignments[7])}}/>
+          <Form.Check inline type = "radio"  name="Alignment" id= 'ce' label = {Alignments[8]} onChange = { () => {props.setAlignment(Alignments[8])}}/>
         </Form.Group>
 
 

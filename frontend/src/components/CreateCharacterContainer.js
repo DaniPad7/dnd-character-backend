@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import CreateCharacterForm from '../forms/CreateCharacterForm';
 
+import { apiCreateCharacter } from '../remote/api-client';
+
 const CreateCharacterContainer = () => {
   const [show, setShow] = useState(false);
 
@@ -32,8 +34,10 @@ const CreateCharacterContainer = () => {
       statWisdom : wis ,
       statCharisma : cha,
       faction : faction,
-      alignment : alignment
+      alignment : {alignment}
     }
+
+    apiCreateCharacter(payload);
   }
 
   const handleCloseRandom = () => {
