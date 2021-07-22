@@ -2,28 +2,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import CreateCharacterContainer from './components/CreateCharacterContainer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import getTestData from "./services/test-service";
+import CharacterCards from "./components/CharacterCards";
+import {useState} from "react";
 
 function App() {
 
-    const test = async () => {
-        let data = await getTestData()
-        console.log(data);
-    }
+    const [character, setCharacter] = useState([]);
 
   return (
     <div className="App">
       <Router>
       <Container fluid>
         <Row >
-          <p>Character Cards goes here</p>
+          <CharacterCards character={character} setCharacter={setCharacter}/>
         </Row>
         <Row>
           <CreateCharacterContainer/>
         </Row>
-          <Button onClick={test}>
-              click me!
-          </Button>
       </Container>
       </Router>
     </div>
