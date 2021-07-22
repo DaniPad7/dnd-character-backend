@@ -8,6 +8,7 @@ public class Goal {
 
 	@Id
 	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int goalId;
 
 	@ManyToOne(targetEntity = Profile.class)

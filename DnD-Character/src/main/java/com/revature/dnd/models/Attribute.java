@@ -8,10 +8,11 @@ public class Attribute {
 
 	@Id
 	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int attributeId;
 
 	@ManyToOne(targetEntity = Profile.class)
-	@JoinColumn(name="profiile_id")
+	@JoinColumn(name="profile_id")
 	Profile profile;
 
 	String attDesc;

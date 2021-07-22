@@ -9,6 +9,7 @@ public class Profile {
 
 	@Id
 	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int profileId;
 
 	String name;
