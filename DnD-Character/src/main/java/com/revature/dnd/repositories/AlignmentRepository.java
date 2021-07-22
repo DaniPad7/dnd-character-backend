@@ -1,11 +1,10 @@
 package com.revature.dnd.repositories;
 
-import com.revature.dnd.models.Goal;
+import com.revature.dnd.models.Alignment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GoalRepository extends JpaRepository<Goal, Integer> {
-
+public interface AlignmentRepository extends JpaRepository<Alignment, Integer> {
 
 }
