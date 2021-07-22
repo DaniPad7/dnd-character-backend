@@ -1,13 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row } from 'react-bootstrap';
 import CreateCharacterContainer from './components/CreateCharacterContainer';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import CharacterCards from "./components/CharacterCards";
+import {useState} from "react";
 
 function App() {
+
+    const [character, setCharacter] = useState([]);
+
   return (
     <div className="App">
       <Container fluid>
         <Row >
-          <p>Character Cards goes here</p>
+          <CharacterCards character={character} setCharacter={setCharacter}/>
         </Row>
         <Row>
           <CreateCharacterContainer/>

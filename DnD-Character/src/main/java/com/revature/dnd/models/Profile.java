@@ -1,11 +1,15 @@
 package com.revature.dnd.models;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name="profiles")
-public class Profile {
+@NoArgsConstructor
+public @Data class Profile {
 
 	@Id
 	@Column
