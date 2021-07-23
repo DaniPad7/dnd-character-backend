@@ -12,7 +12,7 @@ public class Alignment {
 
 	private String alignment;
 
-	@OneToOne(targetEntity = Profile.class)
+	@OneToMany(targetEntity = Profile.class)
 	@JoinColumn(name="profile_id")
 	private Profile profile;
 }

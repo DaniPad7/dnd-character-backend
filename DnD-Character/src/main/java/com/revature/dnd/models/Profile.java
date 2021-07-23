@@ -30,7 +30,7 @@ public class Profile {
 
 	private String faction;
 
-	@OneToOne(targetEntity = Alignment.class)
+	@ManyToOne(targetEntity = Alignment.class)
 	private Alignment alignment;
 
 }

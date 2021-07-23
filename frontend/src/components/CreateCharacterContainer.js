@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import CreateCharacterForm from '../forms/CreateCharacterForm';
+import * as Random from '../constants/random';
 
 const CreateCharacterContainer = () => {
   const [show, setShow] = useState(false);
+  const [preset, setPreset] = useState({
+    name: '',
+    desc: '',
+    faction: '',
+    alignment: '',
+    stats: []
+  });
 
   const handleShow = () => setShow(true);
   
@@ -11,10 +19,34 @@ const CreateCharacterContainer = () => {
     setShow(false);
   }
 
-  const handleCloseRandom = () => {
+  const handleRandom = () => {
+    let statList = [];
+    for (let j = 0; j < 6; j++) {
+      let dice = [];
+      for (let i = 0; i < 4; i++) {
+        let rand = newRNG(6) + 1;
+        dice.push(rand);
+      }
+      dice.sort().reverse().pop();
+      statList.push(dice.reduce((a, b) => a+b));
+      console.log(statList);
+    }
+    let n = Random.fNames[newRNG(6)] + " " + Random.sNames[newRNG(6)];
+    let d = Random.descs[newRNG(6)];
+    let f = Random.factions[newRNG(6)];
+    let a = Random.alignments[newRNG(9)];
 
+    setPreset({
+      name: n,
+      desc: d,
+      faction: f,
+      alignment: a,
+      stats: statList
+    });
+  }
 
-    setShow(false);
+  function newRNG(n) {
+    return Math.floor(((Math.random() * 1000) % n));
   }
 
 
@@ -26,13 +58,13 @@ const CreateCharacterContainer = () => {
           <Modal.Title> Create Your Character here</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <CreateCharacterForm/>
+          <CreateCharacterForm preset = {preset}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant = "primary" onClick = {handleClose}>
             Save Changes
           </Button>
-          <Button variant = "primary" onClick = {handleCloseRandom}>
+          <Button variant = "primary" onClick = {handleRandom}>
             Random Gen
           </Button>
           <Button variant= "secondary" onClick = {handleClose}>
