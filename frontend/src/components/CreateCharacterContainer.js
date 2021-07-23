@@ -34,7 +34,7 @@ const CreateCharacterContainer = () => {
       statWisdom : wis ,
       statCharisma : cha,
       faction : faction,
-      alignment : {alignment}
+      alignment : {alignment: alignment}
     }
 
     apiCreateCharacter(payload);
