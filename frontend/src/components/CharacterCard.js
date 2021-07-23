@@ -20,8 +20,7 @@ export default function CharacterCard(props) {
                         <ListGroupItem>Faction: {props.faction}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                        <Card.Link href="#">Card Link</Card.Link>
-                        <Card.Link href="#">Another Link</Card.Link>
+                        <Card.Link href="#">Update</Card.Link>
                     </Card.Body>
                 </Card>
             </div>

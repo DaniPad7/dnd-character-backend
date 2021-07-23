@@ -34,4 +34,11 @@ public class ProfileService {
 
         return profileRepository.save(profile);
     }
+
+    public Profile updateProfile(ProfileCreateDTO profile) {
+        Alignment alignment = alignmentRepository.findByAlignment(profile.getAlignment().getAlignment());
+        Profile updatedProfile = new Profile(profile);
+        updatedProfile.setAlignment(alignment);
+        return profileRepository.save(updatedProfile);
+    }
 }

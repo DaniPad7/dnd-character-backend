@@ -28,4 +28,9 @@ public class ProfileController {
     public Profile createNewProfile(@RequestBody ProfileCreateDTO profile){
         return profileService.createNewProfile(profile);
     }
+
+    @PutMapping(value="/update", consumes = APPLICATION_JSON_VALUE)
+    public Profile updateProfile(@RequestBody ProfileCreateDTO profile) {
+        return profileService.updateProfile(profile);
+    }
 }
