@@ -15,11 +15,12 @@ public @Data class Profile {
 	public Profile(ProfileCreateDTO profile) {
 		this.setName(profile.getName());
 		this.setDesc(profile.getDesc());
-		this.setStatCharisma(profile.getStatCharisma());
+		this.setStatStrength(profile.getStatStrength());
+		this.setStatDexterity(profile.getStatDexterity());
 		this.setStatConstitution(profile.getStatConstitution());
 		this.setStatIntelligence(profile.getStatIntelligence());
 		this.setStatWisdom(profile.getStatWisdom());
-		this.setStatStrength(profile.getStatStrength());
+		this.setStatCharisma(profile.getStatCharisma());
 		this.setFaction(profile.getFaction());
 	}
 

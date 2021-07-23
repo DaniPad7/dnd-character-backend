@@ -20,12 +20,11 @@ export default function CharacterCards (props) {
                 statIntelligence: value.statIntelligence,
                 statWisdom: value.statWisdom,
                 statCharisma: value.statCharisma,
-                faction: value.faction
+                faction: value.faction,
+                alignment: value.alignment.alignment
             });
         }
-        console.log(profile);
         props.setCharacter(profile);
-        console.log(props.character)
     }
 
    useEffect(  () => {
@@ -34,11 +33,12 @@ export default function CharacterCards (props) {
 
    return(
        <>
-          <Container>
+          <Container style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
           {props.character.map((c, index) => (
-              <CharacterCard
+              <CharacterCard 
                   key={index}
                   id={c.profileId}
+                  alignment={c.alignment}
                   desc={c.desc}
                   faction={c.faction}
                   statCharisma={c.statCharisma}
@@ -49,7 +49,7 @@ export default function CharacterCards (props) {
                   statWisdom={c.statWisdom}
                   name={c.name}/>
           ))}
-       </Container>
+          </Container>
        </>
    )
 

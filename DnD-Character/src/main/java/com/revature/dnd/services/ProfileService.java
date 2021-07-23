@@ -29,7 +29,6 @@ public class ProfileService {
 
     public Profile createNewProfile(ProfileCreateDTO newProfile){
         Alignment alignment = alignmentRepository.findByAlignment(newProfile.getAlignment().getAlignment());
-
         Profile profile = new Profile(newProfile);
         profile.setAlignment(alignment);
 

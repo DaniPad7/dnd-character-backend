@@ -3,11 +3,11 @@ import { Container, Row } from 'react-bootstrap';
 import CreateCharacterContainer from './components/CreateCharacterContainer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import CharacterCards from "./components/CharacterCards";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function App() {
 
-    const [character, setCharacter] = useState([]);
+  const [character, setCharacter] = useState([]);
 
   return (
     <div className="App">
@@ -16,7 +16,7 @@ function App() {
           <CharacterCards character={character} setCharacter={setCharacter}/>
         </Row>
         <Row>
-          <CreateCharacterContainer/>
+          <CreateCharacterContainer character ={character} setCharacter={setCharacter}/>
         </Row>
       </Container>
     </div>

@@ -5,17 +5,18 @@ import {Button} from "bootstrap";
 
 export default function CharacterCard(props) {
     return (
-        <Container>
+        
             <div id={props.id}>
-                <Card style={{width: '18rem'}}>
+                <Card style={{width: '18rem', flex: 1, margin: '1rem'}}>
                     <Card.Body>
                         <Card.Title>{props.name}</Card.Title>
                         <Card.Text>{props.desc}</Card.Text>
+                        <Card.Text>Alignment: {props.alignment}</Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem>Strength: {props.statStrength} Dexterity: {props.statDexterity}</ListGroupItem>
-                        <ListGroupItem>Constitution: {props.statConstitution} Wisdom: {props.statWisdom}</ListGroupItem>
-                        <ListGroupItem>Charisma: {props.statCharisma}</ListGroupItem>
+                        <ListGroupItem>Constitution: {props.statConstitution} Intelligence: {props.statIntelligence}</ListGroupItem>
+                        <ListGroupItem>Wisdom: {props.statWisdom} Charisma: {props.statCharisma}</ListGroupItem>
                         <ListGroupItem>Faction: {props.faction}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
@@ -24,6 +25,6 @@ export default function CharacterCard(props) {
                     </Card.Body>
                 </Card>
             </div>
-        </Container>
+        
     );
 }

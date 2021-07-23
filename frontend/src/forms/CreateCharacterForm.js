@@ -7,31 +7,18 @@ const MAX_STAT = 20;
 
 const CreateCharacterForm = (props)=> {
 
-  const [alignment, setAlignment] = useState("");
-
-  // useEffect(() => {
-
-  // }, [])
-
-
-  const handleAlignment = e => {
-    if (props.preset.alignment === e.target.id.toUpperCase()) {
-      setAlignment(e.target.label);
-    }
-  }
-
   return (
     <div>
       <Form>
         
         <Form.Group className = "characterCreate" controlId= "characterName">
           <Form.Label>Character Name</Form.Label>
-          <Form.Control type="text" placeholder= "Enter Name here" value={props.preset.name} onChange = { (e) => {props.setName(e.target.value)}}/>
+          <Form.Control type="text" placeholder= "Enter Name here" value={props.name} onChange = { (e) => {props.setName(e.target.value)}}/>
         </Form.Group>
 
         <Form.Group className = "characterCreate" controlId = "characterDescription">
           <Form.Label>Character Description</Form.Label>
-          <Form.Control as = "textarea" placeholder = "Enter Description here" value = {props.preset.desc} onChange = { (e) => {props.setDescription(e.target.value)}}/>
+          <Form.Control as = "textarea" placeholder = "Enter Description here" value = {props.description} onChange = { (e) => {props.setDescription(e.target.value)}}/>
         </Form.Group>
 
         <br/>
@@ -39,11 +26,11 @@ const CreateCharacterForm = (props)=> {
         <Form.Group className = "characterCreate" controlId = "characterStat">
           <InputGroup className = "characterCreateStats" >
             <Form.Label>STR </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[0]} onChange = { (e) => {props.setStr( Number( e.target.value  ))} }/> 
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.str} onChange = { (e) => {props.setStr( Number( e.target.value  ))} }/> 
             <Form.Label>DEX </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[1]} onChange = { (e) => {props.setDex( Number( e.target.value  ))} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.dex} onChange = { (e) => {props.setDex( Number( e.target.value  ))} }/>  
             <Form.Label>CON </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[2]} onChange = { (e) => {props.setCon( Number( e.target.value  ))} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.con} onChange = { (e) => {props.setCon( Number( e.target.value  ))} }/>  
           </InputGroup>    
         </Form.Group>
 
@@ -52,11 +39,11 @@ const CreateCharacterForm = (props)=> {
         <Form.Group className = "characterCreate" controlId = "characterStat2">
           <InputGroup className = "characterCreateStats" >
             <Form.Label>INT </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[3]} onChange = { (e) => {props.setInt( Number( e.target.value  ) )} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.int} onChange = { (e) => {props.setInt( Number( e.target.value  ) )} }/>  
             <Form.Label>WIS </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[4]} onChange = { (e) => {props.setWis( Number( e.target.value  ))} }/>  
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.wis} onChange = { (e) => {props.setWis( Number( e.target.value  ))} }/>  
             <Form.Label>CHA </Form.Label>
-            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.preset.stats[5]} onChange = { (e) => {props.setCha( Number( e.target.value  ))} }/>
+            <Form.Control type="number" min = {MIN_STAT} max = {MAX_STAT} value={props.cha} onChange = { (e) => {props.setCha( Number( e.target.value  ))} }/>
             </InputGroup>    
         </Form.Group>
 
@@ -76,7 +63,7 @@ const CreateCharacterForm = (props)=> {
 
         <Form.Group className = "characterCreate" controlId = "characterFaction">
           <Form.Label> Character Faction :</Form.Label>
-          <Form.Control type="text" placeholder= "Enter Faction here" value = {props.preset.faction} onChange = { (e) => {props.setFaction(e.target.value)} }/>
+          <Form.Control type="text" placeholder= "Enter Faction here" value = {props.faction} onChange = { (e) => {props.setFaction(e.target.value)} }/>
          </Form.Group>
 
       </Form>
