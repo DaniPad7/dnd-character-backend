@@ -1,24 +1,29 @@
 import React from 'react';
-import {Container, Row, Col, Card} from 'react-bootstrap';
+import {Container, Row, Col, Card, ListGroup, ListGroupItem} from 'react-bootstrap';
 import {Button} from "bootstrap";
 
-const CharacterCard = () =>{
 
-  return(
-    <Container>
-      <Row>
-          <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-          </Card>
-      </Row>
-    </Container>
-  )
+export default function CharacterCard(props) {
+    return (
+        <Container>
+            <div id={props.id}>
+                <Card style={{width: '18rem'}}>
+                    <Card.Body>
+                        <Card.Title>{props.name}</Card.Title>
+                        <Card.Text>{props.desc}</Card.Text>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                        <ListGroupItem>Strength: {props.statStrength} Dexterity: {props.statDexterity}</ListGroupItem>
+                        <ListGroupItem>Constitution: {props.statConstitution} Wisdom: {props.statWisdom}</ListGroupItem>
+                        <ListGroupItem>Charisma: {props.statCharisma}</ListGroupItem>
+                        <ListGroupItem>Faction: {props.faction}</ListGroupItem>
+                    </ListGroup>
+                    <Card.Body>
+                        <Card.Link href="#">Card Link</Card.Link>
+                        <Card.Link href="#">Another Link</Card.Link>
+                    </Card.Body>
+                </Card>
+            </div>
+        </Container>
+    );
 }

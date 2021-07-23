@@ -1,11 +1,27 @@
 package com.revature.dnd.models;
 
+import com.revature.dnd.web.requestmodels.ProfileCreateDTO;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name="profiles")
-public class Profile {
+@NoArgsConstructor
+public @Data class Profile {
+
+	public Profile(ProfileCreateDTO profile) {
+		this.setName(profile.getName());
+		this.setDesc(profile.getDesc());
+		this.setStatCharisma(profile.getStatCharisma());
+		this.setStatConstitution(profile.getStatConstitution());
+		this.setStatIntelligence(profile.getStatIntelligence());
+		this.setStatWisdom(profile.getStatWisdom());
+		this.setStatStrength(profile.getStatStrength());
+		this.setFaction(profile.getFaction());
+	}
 
 	@Id
 	@Column

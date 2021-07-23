@@ -8,3 +8,5 @@ export const apiClient = axios.create({
         'Content-Type' : 'application/json'
     }
 })
+
+export const apiCreateCharacter = (body) => { axios.post(apiUrl+"/profile/create",body)};
