@@ -1,36 +1,53 @@
 package com.revature.dnd.models;
 
+import com.revature.dnd.web.requestmodels.ProfileCreateDTO;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name="profiles")
-public class Profile {
+@NoArgsConstructor
+public @Data class Profile {
+
+	public Profile(ProfileCreateDTO profile) {
+		this.setName(profile.getName());
+		this.setDesc(profile.getDesc());
+		this.setStatStrength(profile.getStatStrength());
+		this.setStatDexterity(profile.getStatDexterity());
+		this.setStatConstitution(profile.getStatConstitution());
+		this.setStatIntelligence(profile.getStatIntelligence());
+		this.setStatWisdom(profile.getStatWisdom());
+		this.setStatCharisma(profile.getStatCharisma());
+		this.setFaction(profile.getFaction());
+	}
 
 	@Id
 	@Column
-	int profileId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int profileId;
 
-	String name;
+	private String name;
 
-	String desc;
+	private String desc;
 
-	int statStrength;
+	private int statStrength;
 
-	int statDexterity;
+	private int statDexterity;
 
-	int statConstitution;
+	private int statConstitution;
 
-	int statIntelligence;
+	private int statIntelligence;
 
-	int statWisdom;
+	private int statWisdom;
 
-	int statCharisma;
+	private int statCharisma;
 
-	@OneToMany(mappedBy = "profile", cascade = CascadeType.ALL)
-	Set<Attribute> attributes;
+	private String faction;
 
-	@OneToMany(mappedBy = "profile", cascade = CascadeType.ALL)
-	Set<Goal> goals;
+	@ManyToOne(targetEntity = Alignment.class)
+	private Alignment alignment;
 
 }

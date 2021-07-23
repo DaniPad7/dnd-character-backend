@@ -1,0 +1,1 @@
+export const Alignments = ["LG", "NG", "CG", "LN", "N", "CN", "LE", "NE", "CE"];
